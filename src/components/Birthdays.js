@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import { Button, ButtonToolbar, Checkbox, Collapse, Form, FormGroup, Glyphicon, Well } from 'react-bootstrap';
+import { Button, ButtonToolbar, Checkbox, Collapse, FormGroup, Glyphicon, Well } from 'react-bootstrap';
 
 export default class Birthdays extends React.Component {
 
@@ -22,7 +22,7 @@ export default class Birthdays extends React.Component {
     );
   }
 }
-
+/*
 class SettingsForm extends React.Component {
 
   render(){
@@ -44,8 +44,8 @@ class SettingsForm extends React.Component {
       </Form>
     );
   }
-
 }
+*/
 
 class Toggle extends React.Component {
   constructor(props) {
@@ -62,10 +62,69 @@ class Toggle extends React.Component {
         </Button>
         <Collapse in={this.state.open}>
           <div>
-            <SettingsForm/>
+            <Derp/>
           </div>
         </Collapse>
       </div>
     );
   }
 }
+
+class Derp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addressPersonByName: false,
+      useEmojis: false
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.showMe = this.showMe.bind(this);
+  }
+
+  handleInputChange(event){
+      const target = event.target;
+      const value = target.checked;
+      const name = target.name;
+
+      this.setState({
+        [name]: value
+      });
+  }
+
+  showMe(event){
+    alert(this.state.useEmojis);
+  }
+
+  render() {
+    return (
+      <form>
+      <label>
+        Address Person By Name:
+        <input
+          name="addressPersonByName"
+          type="checkbox"
+          checked={this.state.addressPersonByName}
+          onChange={this.handleInputChange} />
+      </label>
+        <label>
+          Use Emojis:
+          <input
+            name="useEmojis"
+            type="checkbox"
+            checked={this.state.useEmojis}
+            onChange={this.handleInputChange} />
+        </label>
+        <ButtonToolbar>
+        <Link to="/">
+          <Button bsStyle="success" type="submit" onClick={this.showMe}><Glyphicon glyph="floppy-disk" /> Save</Button>
+        </Link>
+        </ButtonToolbar>
+      </form>
+    );
+  }
+}
+
+// <input type="text" ref={(input) => this.input = input} />
+
+//<Checkbox inputRef={ref => { this.input = ref; }}>Use Emojis</Checkbox>
+//<Checkbox inputRef={ref => { this.input = ref; }}>Address Person By Name</Checkbox>
