@@ -22,31 +22,6 @@ export default class Birthdays extends React.Component {
     );
   }
 }
-/*
-const settingsForm = (
-  <Form horizontal>
-    <Button bsStyle="primary" onClick={ ()=> this.setState({ open: !this.state.open })}>TOGGLE</Button>
-    <Collapse in={this.state.open}>
-      <FormGroup>
-          <Checkbox>Use Emojis</Checkbox>
-      </FormGroup>
-      <FormGroup>
-          <Checkbox>Address Person By Name</Checkbox>
-      </FormGroup>
-    </Collapse>
-    <FormGroup>
-        <ButtonToolbar>
-        <Link to="/">
-          <Button bsStyle="warning"><Glyphicon glyph="arrow-left" /> Back</Button>
-        </Link>
-        <Link to="/">
-          <Button bsStyle="success" type="submit"><Glyphicon glyph="floppy-disk" /> Save</Button>
-        </Link>
-        </ButtonToolbar>
-    </FormGroup>
-  </Form>
-);
-*/
 
 class SettingsForm extends React.Component {
 
@@ -94,9 +69,3 @@ class Toggle extends React.Component {
     );
   }
 }
-//<Button onClick={ ()=> this.setState({ open: !this.state.open })} active={this.isActive(this.props.to)}>
-// Birthdays reply to everyone
-// use emojis
-// address person by name
-// enter special message
-// Separate: respond to event reminders
