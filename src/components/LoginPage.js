@@ -12,7 +12,7 @@ export default class LoginPage extends React.Component {
 
 const loginSection = (
   <div className="container">
-    <h1>LOGIN PAGE YO</h1>
+    <h1>FBAuto Login</h1>
     <p>Welcome! Please Login</p>
     <hr/><br/>
     <Button href="/auth/facebook" bsStyle="primary">Login With Facebook!</Button>

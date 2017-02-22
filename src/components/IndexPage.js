@@ -17,7 +17,7 @@ const menuSection = (
     <p>Configure Your Optimization Settings Below</p>
     <hr/><br/>
     <ButtonToolbar>
-    <Link to="/login">
+    <Link to="/bdaySettings">
       <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
     </Link>
     <Link to="/login">
