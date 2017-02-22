@@ -17,8 +17,8 @@ export default class IndexPage extends React.Component {
         <Link to={{ pathname: '/bdaySettings', query: { uid: this.props.location.query.uid } }}>
           <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
         </Link>
-        <Link to="/login">
-          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="user" /> Profile Pic</Button>
+        <Link to={{ pathname: '/eventSettings', query: { uid: this.props.location.query.uid } }}>
+          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="calendar" />Events</Button>
         </Link>
       </ButtonToolbar>
     </div>;
