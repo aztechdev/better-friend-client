@@ -67,7 +67,7 @@ class Checkboxes extends React.Component {
       },
       body: JSON.stringify({
         "data" : {
-          "pagesEnabled" : this.state.isEnabled
+          "pagesEnabled" : this.state.pagesEnabled
           }
       })
     }).then((response) => {
