@@ -14,9 +14,9 @@ export default class Birthdays extends React.Component {
         <hr/><br/>
         <Checkboxes uid={this.props.location.query.uid}/>
         <ButtonToolbar>
-        <Link to={{ pathname: '/profile', query: { uid: this.props.location.query.uid } }}>
-          <Button bsStyle="warning"><Glyphicon glyph="arrow-left" /> Back</Button>
-        </Link>
+          <Link to={{ pathname: '/profile', query: { uid: this.props.location.query.uid } }}>
+            <Button bsStyle="warning"><Glyphicon glyph="arrow-left" /> Back</Button>
+          </Link>
         </ButtonToolbar>
       </div>
     );

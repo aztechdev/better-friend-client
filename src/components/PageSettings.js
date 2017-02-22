@@ -32,8 +32,19 @@ class Checkboxes extends React.Component {
     this.submitEvents = this.submitEvents.bind(this);
 
     this.state = {
-      isEnabled: false
+      pagesEnabled: false
     };
+  }
+
+  componentWillMount(){
+    fetch('https://betterfriend.herokuapp.com/query/' + this.props.uid + '/pages')
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      console.log(json);
+      this.setState({pagesEnabled: json.data['pagesEnabled']});
+    }.bind(this));
   }
 
   handleInputChange(event){
