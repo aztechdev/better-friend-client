@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
   }
 
   componentWillMount(){
-    fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
+    fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid)
     .then(function(response){
       return response.json();
     })
@@ -29,7 +29,7 @@ export default class IndexPage extends React.Component {
     console.log("User ID: " + this.props.location.query.uid);
 
     return (<div className="container">
-      <h1>Welcome Back! {this.state.name}</h1>
+      <h1>Welcome Back, {this.state.name}!</h1>
       <p>Configure Your Optimization Settings Below</p>
       <hr/><br/>
       <ButtonToolbar>

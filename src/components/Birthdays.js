@@ -32,10 +32,23 @@ class Checkboxes extends React.Component {
     this.submitBirthday = this.submitBirthday.bind(this);
 
     this.state = {
-      isBirthdayEnabled: false,
-      addressPersonByName: false,
-      useEmojis: false
+      isEnabled: false,
+      callByName: false,
+      useEmoji: false
     };
+  }
+
+  componentWillMount(){
+    fetch('https://betterfriend.herokuapp.com/query/' + this.props.uid + '/birthday')
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      console.log(json);
+      this.setState({callByName: json.data.birthdaySettings['callByName']});
+      this.setState({isEnabled: json.data.birthdaySettings['isEnabled']});
+      this.setState({useEmoji: json.data.birthdaySettings['useEmoji']});
+    }.bind(this));
   }
 
   handleInputChange(event){
@@ -59,9 +72,9 @@ class Checkboxes extends React.Component {
       body: JSON.stringify({
         "data" : {
           "birthdaySettings": {
-            "isEnabled": this.state.isBirthdayEnabled,
-            "useEmoji": this.state.useEmojis,
-            "callByName": this.state.addressPersonByName
+            "isEnabled": this.state.isEnabled,
+            "useEmoji": this.state.useEmoji,
+            "callByName": this.state.callByName
           }
         }
       })
@@ -81,9 +94,9 @@ class Checkboxes extends React.Component {
       <label>
         <h4>Enable Birthday Optimizations:
         <input
-          name="isBirthdayEnabled"
+          name="isEnabled"
           type="checkbox"
-          checked={this.state.isBirthdayEnabled}
+          checked={this.state.isEnabled}
           onChange={this.handleInputChange} />
           </h4>
       </label>
@@ -91,18 +104,18 @@ class Checkboxes extends React.Component {
       <label>
         Address Person By Name:
         <input
-          name="addressPersonByName"
+          name="callByName"
           type="checkbox"
-          checked={this.state.addressPersonByName}
+          checked={this.state.callByName}
           onChange={this.handleInputChange} />
       </label>
       <br/>
       <label>
         Use Emojis:
         <input
-          name="useEmojis"
+          name="useEmoji"
           type="checkbox"
-          checked={this.state.useEmojis}
+          checked={this.state.useEmoji}
           onChange={this.handleInputChange} />
       </label>
       <ButtonToolbar>
