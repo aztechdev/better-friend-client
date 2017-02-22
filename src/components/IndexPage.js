@@ -7,16 +7,22 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 export default class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: ""
+    };
+}
+
 
   componentWillMount(){
-    let stuff;
     fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
     .then(function(response){
       return response.json();
     })
     .then(function(json){
       console.log(json);
-      stuff = json;
+      this.setState({name: json.data['name']});
     });
   }
 
@@ -24,7 +30,7 @@ export default class IndexPage extends React.Component {
     console.log("User ID: " + this.props.location.query.uid);
 
     return (<div className="container">
-      <h1>Welcome Back! {stuff.data.name}</h1>
+      <h1>Welcome Back! {this.state.name}</h1>
       <p>Configure Your Optimization Settings Below</p>
       <hr/><br/>
       <ButtonToolbar>
