@@ -22,7 +22,7 @@ export default class IndexPage extends React.Component {
     .then(function(json){
       console.log(json);
       this.setState({name: json.data['name']});
-    }).bind(this);
+    }.bind(this));
   }
 
   render(){
