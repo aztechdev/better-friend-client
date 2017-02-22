@@ -48,6 +48,30 @@ class Checkboxes extends React.Component {
 
   submitBirthday(event){
 
+    fetch('http://localhost:3000/query/106786933180363/birthday', {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "data" : {
+          "birthdaySettings": {
+            "isEnabled": this.state.isBirthdayEnabled,
+            "useEmoji": this.state.useEmojis,
+            "callByName": this.state.addressPersonByName
+          }
+        }
+      })
+    }).then((response) => {
+      alert("foo");
+      if(response.status == 200){
+        alert("Update successful!")
+      } else{
+        alert("Update Failed!")
+      }
+    });
+
   }
 
   render() {
@@ -81,9 +105,7 @@ class Checkboxes extends React.Component {
           onChange={this.handleInputChange} />
       </label>
       <ButtonToolbar>
-      <Link to="/">
-        <Button bsStyle="success" type="submit" onClick={this.submitBirthday}><Glyphicon glyph="floppy-disk" /> Save</Button>
-      </Link>
+        <Button bsStyle="success" onClick={this.submitBirthday}><Glyphicon glyph="floppy-disk" /> Save</Button>
       </ButtonToolbar>
       </form>
     );
