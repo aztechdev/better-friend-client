@@ -8,26 +8,29 @@ import fetch from 'whatwg-fetch';
 export default class IndexPage extends React.Component {
 
   render(){
-    console.log("User ID: " + this.props.location.query.uid);
+    {/*console.log("User ID: " + this.props.location.query.uid);*/}
 
-    fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(json){
-      console.log(json);
-    });
+    {/*fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')*/}
+    {/*.then(function(response){*/}
+    //   return response.json();
+    // })
+    // .then(function(json){
+    //   console.log(json);
+    // });
 
     return (<div className="container">
-      <h1>Welcome Back! {json}</h1>
+      <h1>Welcome Back!</h1>
       <p>Configure Your Optimization Settings Below</p>
       <hr/><br/>
       <ButtonToolbar>
         <Link to={{ pathname: '/bdaySettings', query: { uid: this.props.location.query.uid } }}>
           <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
         </Link>
-        <Link to={{ pathname: '/eventSettings', query: { uid: this.props.location.query.uid } }}>
-          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="calendar" />Events</Button>
+        {/*<Link to={{ pathname: '/eventSettings', query: { uid: this.props.location.query.uid } }}>*/}
+          {/*<Button bsStyle="primary" bsSize="large"><Glyphicon glyph="calendar" />Events</Button>*/}
+        {/*</Link>*/}
+        <Link to={{ pathname: '/pageSettings', query: { uid: this.props.location.query.uid } }}>
+          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="old-man" /> Enterprise Editition</Button>
         </Link>
       </ButtonToolbar>
     </div>);
