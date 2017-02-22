@@ -15,6 +15,6 @@ const loginSection = (
     <h1>FBAuto Login</h1>
     <p>Welcome! Please Login</p>
     <hr/><br/>
-    <Button href="/auth/facebook" bsStyle="primary">Login With Facebook!</Button>
+    <Button href="https://betterfriend.herokuapp.com/auth/facebook" bsStyle="primary">Login With Facebook!</Button>
   </div>
 );
