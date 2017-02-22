@@ -1,5 +1,8 @@
-#Mac OS
+# Mac OS
 .DS_Store
+
+# IntelliJ
+.idea/
 
 # Webpack generated bundle
 src/static/js/bundle.js
