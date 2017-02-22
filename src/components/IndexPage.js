@@ -12,9 +12,7 @@ export default class IndexPage extends React.Component {
     this.state = {
       name: ""
     };
-}
-
-
+  }
 
   componentWillMount(){
     fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
