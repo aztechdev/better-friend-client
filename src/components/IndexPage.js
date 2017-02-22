@@ -3,23 +3,29 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Button, ButtonToolbar, Glyphicon } from 'react-bootstrap';
-import fetch from 'whatwg-fetch';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 export default class IndexPage extends React.Component {
 
-  render(){
-    {/*console.log("User ID: " + this.props.location.query.uid);*/}
 
-    {/*fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')*/}
-    {/*.then(function(response){*/}
-    //   return response.json();
-    // })
-    // .then(function(json){
-    //   console.log(json);
-    // });
+  componentWillMount(){
+    let stuff;
+    fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      console.log(json);
+      stuff = json;
+    });
+  }
+
+  render(){
+    console.log("User ID: " + this.props.location.query.uid);
 
     return (<div className="container">
-      <h1>Welcome Back!</h1>
+      <h1>Welcome Back! {stuff.data.name}</h1>
       <p>Configure Your Optimization Settings Below</p>
       <hr/><br/>
       <ButtonToolbar>
