@@ -12,6 +12,7 @@ export default class IndexPage extends React.Component {
     this.state = {
       name: ""
     };
+    this.componentWillMount = this.componentWillMount.bind(this);
   }
 
   componentWillMount(){
