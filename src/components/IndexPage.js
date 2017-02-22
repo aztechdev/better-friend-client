@@ -21,8 +21,8 @@ export default class IndexPage extends React.Component {
     })
     .then(function(json){
       console.log(json);
-      IndexPage.setState({name: json.data['name']});
-    });
+      this.setState({name: json.data['name']});
+    }).bind(this);
   }
 
   render(){
