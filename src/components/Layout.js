@@ -1,6 +1,7 @@
 // src/components/Layout.js
 import React from 'react';
 import { Link } from 'react-router';
+import { Glyphicon } from 'react-bootstrap';
 
 export default class Layout extends React.Component {
   render() {
@@ -15,7 +16,8 @@ export default class Layout extends React.Component {
         <div className="app-content">{this.props.children}</div>
         <footer>
           <p>
-            FBAuto is using <strong>React</strong> and <strong>Express</strong>.
+            FBAuto is using <strong>React</strong> and <strong>Express</strong>.<br/>
+            Developed with love by Jan, Jarrett, Jon, & Andrew. <Glyphicon glyph="heart-empty" />
           </p>
         </footer>
       </div>
