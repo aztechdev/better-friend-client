@@ -49,7 +49,7 @@ class Checkboxes extends React.Component {
 
   submitEvents(event){
     console.log(this.props.uid);
-    fetch('http://localhost:3000/query/' + this.props.uid + '/events', {
+    fetch('https://betterfriend.herokuapp.com/query/' + this.props.uid + '/events', {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
