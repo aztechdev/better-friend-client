@@ -6,9 +6,16 @@ export default class LoginPage extends React.Component {
 
   render(){
     return(
-      <div className="login">
-        <h2>Please Login</h2>
-      </div>
+      derp
     );
   }
 }
+
+const derp = (
+  <div className="container">
+    <h1>LOGIN PAGE YO</h1>
+    <p>Welcome! Please Login.</p>
+    <hr/><br/>
+    <a href="/auth/github" className="btn btn-default">Github</a>
+  </div>
+);
