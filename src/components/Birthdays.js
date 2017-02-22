@@ -12,7 +12,7 @@ export default class Birthdays extends React.Component {
         <h1>Birthday Settings</h1>
         <p>Configure Your Optimization Settings Below</p>
         <hr/><br/>
-        <Toggle/>
+        <Checkboxes/>
         <ButtonToolbar>
         <Link to="/">
           <Button bsStyle="warning"><Glyphicon glyph="arrow-left" /> Back</Button>
@@ -22,63 +22,18 @@ export default class Birthdays extends React.Component {
     );
   }
 }
-/*
-class SettingsForm extends React.Component {
 
-  render(){
-    return(
-      <Form horizontal>
-          <FormGroup>
-              <Checkbox>Use Emojis</Checkbox>
-          </FormGroup>
-          <FormGroup>
-              <Checkbox>Address Person By Name</Checkbox>
-          </FormGroup>
-        <FormGroup>
-            <ButtonToolbar>
-            <Link to="/">
-              <Button bsStyle="success" type="submit"><Glyphicon glyph="floppy-disk" /> Save</Button>
-            </Link>
-            </ButtonToolbar>
-        </FormGroup>
-      </Form>
-    );
-  }
-}
-*/
 
-class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
-          Toggle Settings
-        </Button>
-        <Collapse in={this.state.open}>
-          <div>
-            <Derp/>
-          </div>
-        </Collapse>
-      </div>
-    );
-  }
-}
-
-class Derp extends React.Component {
+class Checkboxes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isBirthdayEnabled: false,
       addressPersonByName: false,
       useEmojis: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.showMe = this.showMe.bind(this);
+    this.submitBirthday = this.submitBirthday.bind(this);
   }
 
   handleInputChange(event){
@@ -91,13 +46,23 @@ class Derp extends React.Component {
       });
   }
 
-  showMe(event){
-    alert(this.state.useEmojis);
+  submitBirthday(event){
+
   }
 
   render() {
     return (
       <form>
+      <label>
+        <h4>Enable Birthday Optimizations:
+        <input
+          name="isBirthdayEnabled"
+          type="checkbox"
+          checked={this.state.isBirthdayEnabled}
+          onChange={this.handleInputChange} />
+          </h4>
+      </label>
+      <hr/><br/>
       <label>
         Address Person By Name:
         <input
@@ -106,25 +71,21 @@ class Derp extends React.Component {
           checked={this.state.addressPersonByName}
           onChange={this.handleInputChange} />
       </label>
-        <label>
-          Use Emojis:
-          <input
-            name="useEmojis"
-            type="checkbox"
-            checked={this.state.useEmojis}
-            onChange={this.handleInputChange} />
-        </label>
-        <ButtonToolbar>
-        <Link to="/">
-          <Button bsStyle="success" type="submit" onClick={this.showMe}><Glyphicon glyph="floppy-disk" /> Save</Button>
-        </Link>
-        </ButtonToolbar>
+      <br/>
+      <label>
+        Use Emojis:
+        <input
+          name="useEmojis"
+          type="checkbox"
+          checked={this.state.useEmojis}
+          onChange={this.handleInputChange} />
+      </label>
+      <ButtonToolbar>
+      <Link to="/">
+        <Button bsStyle="success" type="submit" onClick={this.submitBirthday}><Glyphicon glyph="floppy-disk" /> Save</Button>
+      </Link>
+      </ButtonToolbar>
       </form>
     );
   }
 }
-
-// <input type="text" ref={(input) => this.input = input} />
-
-//<Checkbox inputRef={ref => { this.input = ref; }}>Use Emojis</Checkbox>
-//<Checkbox inputRef={ref => { this.input = ref; }}>Address Person By Name</Checkbox>
