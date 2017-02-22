@@ -9,12 +9,14 @@ require('isomorphic-fetch');
 export default class IndexPage extends React.Component {
 
   componentWillMount(){
+    let stuff;
     fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
     .then(function(response){
       return response.json();
     })
     .then(function(json){
       console.log(json);
+      stuff = json;
     });
   }
 
@@ -22,7 +24,7 @@ export default class IndexPage extends React.Component {
     console.log("User ID: " + this.props.location.query.uid);
 
     return (<div className="container">
-      <h1>Welcome Back! {json.data.name}</h1>
+      <h1>Welcome Back! {stuff.data.name}</h1>
       <p>Configure Your Optimization Settings Below</p>
       <hr/><br/>
       <ButtonToolbar>
