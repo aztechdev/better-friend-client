@@ -12,7 +12,6 @@ export default class IndexPage extends React.Component {
     this.state = {
       name: ""
     };
-    this.componentWillMount = this.componentWillMount.bind(this);
   }
 
   componentWillMount(){
@@ -22,7 +21,7 @@ export default class IndexPage extends React.Component {
     })
     .then(function(json){
       console.log(json);
-      this.setState({name: json.data['name']});
+      IndexPage.setState({name: json.data['name']});
     });
   }
 
