@@ -14,7 +14,7 @@ export default class Events extends React.Component {
         <hr/><br/>
         <Checkboxes uid={this.props.location.query.uid}/>
         <ButtonToolbar>
-          <Link to={{ pathname: '/', query: { uid: this.props.location.query.uid } }}>
+          <Link to={{ pathname: '/profile', query: { uid: this.props.location.query.uid } }}>
             <Button bsStyle="warning"><Glyphicon glyph="arrow-left" /> Back</Button>
           </Link>
         </ButtonToolbar>
