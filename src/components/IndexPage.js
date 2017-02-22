@@ -15,6 +15,7 @@ export default class IndexPage extends React.Component {
 }
 
 
+
   componentWillMount(){
     fetch('https://betterfriend.herokuapp.com/query/' + this.props.location.query.uid + '/birthday')
     .then(function(response){
@@ -37,8 +38,11 @@ export default class IndexPage extends React.Component {
         <Link to={{ pathname: '/bdaySettings', query: { uid: this.props.location.query.uid } }}>
           <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
         </Link>
-        <Link to={{ pathname: '/eventSettings', query: { uid: this.props.location.query.uid } }}>
-          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="calendar" />Events</Button>
+        {/*<Link to={{ pathname: '/eventSettings', query: { uid: this.props.location.query.uid } }}>*/}
+          {/*<Button bsStyle="primary" bsSize="large"><Glyphicon glyph="calendar" />Events</Button>*/}
+        {/*</Link>*/}
+        <Link to={{ pathname: '/pageSettings', query: { uid: this.props.location.query.uid } }}>
+          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="old-man" /> Enterprise Editition</Button>
         </Link>
       </ButtonToolbar>
     </div>);

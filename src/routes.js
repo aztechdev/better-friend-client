@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 import IndexPage from './components/IndexPage';
 import LoginPage from './components/LoginPage';
 import Birthdays from './components/Birthdays';
-import Events from './components/Events';
+import PageSettings from "./components/PageSettings"
 import NotFoundPage from './components/NotFoundPage';
 
 function requireAuth(nextState, replace) {
@@ -24,7 +24,7 @@ const routes = (
     <Route path="/profile" component={IndexPage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/bdaySettings" component={Birthdays}/>
-    <Route path="/eventSettings" component={Events}/>
+    <Route path="/pageSettings" component={PageSettings}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>
 );
