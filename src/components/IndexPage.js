@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Button, ButtonToolbar, Glyphicon } from 'react-bootstrap';
-import fetch from 'whatwg-fetch';
+import 'whatwg-fetch';
 
 export default class IndexPage extends React.Component {
 
