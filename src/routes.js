@@ -10,7 +10,6 @@ import Events from './components/Events';
 import NotFoundPage from './components/NotFoundPage';
 
 function requireAuth(nextState, replace) {
-  console.log("here")
   if (true) {
     replace({
       pathname: "/login",

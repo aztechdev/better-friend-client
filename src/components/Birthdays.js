@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import { Button, ButtonToolbar, Checkbox, Collapse, FormGroup, Glyphicon, Well } from 'react-bootstrap';
+import { Button, ButtonToolbar, FormGroup, Glyphicon } from 'react-bootstrap';
 
 export default class Birthdays extends React.Component {
 
@@ -26,7 +26,7 @@ export default class Birthdays extends React.Component {
 
 class Checkboxes extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitBirthday = this.submitBirthday.bind(this);
