@@ -11,7 +11,7 @@ export default class Birthdays extends React.Component {
       <div className="container">
         <h1>Birthday Settings</h1>
         <p>Configure Your Optimization Settings Below</p>
-        <hr/><br/>
+        <hr/>
         <Checkboxes uid={this.props.location.query.uid}/>
         <ButtonToolbar>
           <Link to={{ pathname: '/profile', query: { uid: this.props.location.query.uid } }}>
@@ -100,7 +100,7 @@ class Checkboxes extends React.Component {
           onChange={this.handleInputChange} />
           </h4>
       </label>
-      <hr/><br/>
+      <hr/>
       <label>
         Address Person By Name:
         <input
@@ -118,9 +118,8 @@ class Checkboxes extends React.Component {
           checked={this.state.useEmoji}
           onChange={this.handleInputChange} />
       </label>
-      <ButtonToolbar>
+      <br/>
         <Button bsStyle="success" onClick={this.submitBirthday}><Glyphicon glyph="floppy-disk" /> Save</Button>
-      </ButtonToolbar>
       </form>
     );
   }

@@ -11,7 +11,7 @@ export default class PageSettings extends React.Component {
       <div className="container">
         <h1>Page Settings</h1>
         <p>Configure Your Optimization Settings Below</p>
-        <hr/><br/>
+        <hr/>
         <Checkboxes uid={this.props.location.query.uid}/>
         <ButtonToolbar>
           <Link to={{ pathname: '/profile', query: { uid: this.props.location.query.uid } }}>
@@ -92,10 +92,8 @@ class Checkboxes extends React.Component {
               onChange={this.handleInputChange} />
           </h4>
         </label>
-        <hr/><br/>
-        <ButtonToolbar>
+        <hr/>
           <Button bsStyle="success" onClick={this.submitEvents}><Glyphicon glyph="floppy-disk" /> Save</Button>
-        </ButtonToolbar>
       </form>
     );
   }

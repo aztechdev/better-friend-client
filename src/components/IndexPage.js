@@ -28,21 +28,22 @@ export default class IndexPage extends React.Component {
   render(){
     console.log("User ID: " + this.props.location.query.uid);
 
-    return (<div className="container">
-      <h1>Welcome Back, {this.state.name}!</h1>
-      <p>Configure Your Optimization Settings Below</p>
-      <hr/><br/>
-      <ButtonToolbar>
+    return (
+      <div className="container">
+        <h1>Welcome Back, {this.state.name}!</h1>
+        <p>Configure Your Optimization Settings Below</p>
+        <hr/><br/>
         <Link to={{ pathname: '/bdaySettings', query: { uid: this.props.location.query.uid } }}>
           <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
         </Link>
+        {' '}
         {/*<Link to={{ pathname: '/eventSettings', query: { uid: this.props.location.query.uid } }}>*/}
           {/*<Button bsStyle="primary" bsSize="large"><Glyphicon glyph="calendar" />Events</Button>*/}
         {/*</Link>*/}
         <Link to={{ pathname: '/pageSettings', query: { uid: this.props.location.query.uid } }}>
-          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="old-man" /> Enterprise Editition</Button>
+          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="briefcase" /> Enterprise Editition</Button>
         </Link>
-      </ButtonToolbar>
-    </div>);
+      </div>
+    );
   }
 }

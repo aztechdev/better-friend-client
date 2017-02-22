@@ -14,6 +14,7 @@ export default class Layout extends React.Component {
           <h1>FBAuto: Optimizing Your Social Interactions</h1>
         </header>
         <div className="app-content">{this.props.children}</div>
+        <hr/>
         <footer>
           <p>
             FBAuto is using <strong>React</strong> and <strong>Express</strong>.<br/>
