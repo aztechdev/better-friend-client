@@ -8,8 +8,9 @@ export default class Layout extends React.Component {
       <div className="app-container">
         <header>
           <Link to="/">
-            <img className="logo" src="/img/facebook-icon-preview.png"/>
+            <img className="logo" src="/img/fbauto-icon.png"/>
           </Link>
+          <h1>FBAuto: Optimizing Your Social Interactions</h1>
         </header>
         <div className="app-content">{this.props.children}</div>
         <footer>
