@@ -1,6 +1,9 @@
 #Mac OS
 .DS_Store
 
+# Webpack generated bundle
+src/static/js/bundle.js
+
 # Logs
 logs
 *.log
