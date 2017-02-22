@@ -7,22 +7,20 @@ import { Button, ButtonToolbar, Glyphicon } from 'react-bootstrap';
 export default class IndexPage extends React.Component {
 
   render(){
-    return menuSection;
+    console.log("Param: " + this.props.location.query.uid);
+
+    return <div className="container">
+      <h1>Welcome Back !</h1>
+      <p>Configure Your Optimization Settings Below</p>
+      <hr/><br/>
+      <ButtonToolbar>
+        <Link to={{ pathname: '/bdaySettings', query: { uid: this.props.location.query.uid } }}>
+          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
+        </Link>
+        <Link to="/login">
+          <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="user" /> Profile Pic</Button>
+        </Link>
+      </ButtonToolbar>
+    </div>;
   }
 }
-
-const menuSection = (
-  <div className="container">
-    <h1>Welcome Back!</h1>
-    <p>Configure Your Optimization Settings Below</p>
-    <hr/><br/>
-    <ButtonToolbar>
-    <Link to="/bdaySettings">
-      <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="gift" /> Birthdays</Button>
-    </Link>
-    <Link to="/login">
-      <Button bsStyle="primary" bsSize="large"><Glyphicon glyph="user" /> Profile Pic</Button>
-    </Link>
-    </ButtonToolbar>
-  </div>
-);

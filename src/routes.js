@@ -9,7 +9,8 @@ import Birthdays from './components/Birthdays';
 import NotFoundPage from './components/NotFoundPage';
 
 function requireAuth(nextState, replace) {
-  if (false) {
+  console.log("here")
+  if (true) {
     replace({
       pathname: "/login",
       state: { nextPathname: nextState.location.pathname }
@@ -19,7 +20,8 @@ function requireAuth(nextState, replace) {
 
 const routes = (
   <Route path="/" component={Layout}>
-    <IndexRoute component={IndexPage} onEnter={requireAuth}/>
+    <IndexRoute component={LoginPage} onEnter={requireAuth}/>
+    <Route path="/profile" component={IndexPage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/bdaySettings" component={Birthdays}/>
     <Route path="*" component={NotFoundPage}/>

@@ -12,9 +12,9 @@ export default class Birthdays extends React.Component {
         <h1>Birthday Settings</h1>
         <p>Configure Your Optimization Settings Below</p>
         <hr/><br/>
-        <Checkboxes/>
+        <Checkboxes uid={this.props.location.query.uid}/>
         <ButtonToolbar>
-        <Link to="/">
+        <Link to={{ pathname: '/', query: { uid: this.props.location.query.uid } }}>
           <Button bsStyle="warning"><Glyphicon glyph="arrow-left" /> Back</Button>
         </Link>
         </ButtonToolbar>
@@ -26,14 +26,16 @@ export default class Birthdays extends React.Component {
 
 class Checkboxes extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.submitBirthday = this.submitBirthday.bind(this);
+
     this.state = {
       isBirthdayEnabled: false,
       addressPersonByName: false,
       useEmojis: false
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.submitBirthday = this.submitBirthday.bind(this);
   }
 
   handleInputChange(event){
@@ -47,8 +49,8 @@ class Checkboxes extends React.Component {
   }
 
   submitBirthday(event){
-
-    fetch('http://localhost:3000/query/106786933180363/birthday', {
+    console.log(this.props.uid);
+    fetch('http://localhost:3000/query/' + this.props.uid + '/birthday', {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -64,7 +66,6 @@ class Checkboxes extends React.Component {
         }
       })
     }).then((response) => {
-      alert("foo");
       if(response.status == 200){
         alert("Update successful!")
       } else{
