@@ -30,7 +30,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <div className="container">
-        <h1>Welcome Back, {this.state.name}!</h1>
+        <h2>Welcome Back, {this.state.name}!</h2>
         <p>Configure Your Optimization Settings Below</p>
         <hr/><br/>
         <Link to={{ pathname: '/bdaySettings', query: { uid: this.props.location.query.uid } }}>

@@ -12,10 +12,9 @@ export default class LoginPage extends React.Component {
 
 const loginSection = (
   <div className="container">
-    <h1>FBAuto Login</h1>
-    <p>Welcome! Please Login</p>
+    <h2>Welcome! Please Login</h2>
     <br/>
-    <Button href="https://betterfriend.herokuapp.com/auth/facebook" bsStyle="primary">
+    <Button href="https://betterfriend.herokuapp.com/auth/facebook" bsSize="large" bsStyle="primary">
     <i className="fa fa-facebook-official" aria-hidden="true"></i> Login With Facebook!</Button>
   </div>
 );

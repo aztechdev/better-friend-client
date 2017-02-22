@@ -11,13 +11,13 @@ export default class Layout extends React.Component {
           <Link to="/">
             <img className="logo" src="/img/fbauto-icon.png"/>
           </Link>
-          <h1>FBAuto: Optimizing Your Social Interactions</h1>
+          <h1>Better Friend: Optimizing Your Social Interactions</h1>
         </header>
         <div className="app-content">{this.props.children}</div>
         <hr/>
         <footer>
           <p>
-            FBAuto is using <strong>React</strong> and <strong>Express</strong>.<br/>
+            Better Friend is using <strong>React</strong> and <strong>Express</strong>.<br/>
             Developed with love by Jan, Jarrett, Jon, & Andrew. <Glyphicon glyph="heart-empty" />
           </p>
         </footer>

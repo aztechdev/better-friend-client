@@ -1,6 +1,7 @@
 
 html {
   color: #030303;
+  background-color: #3b5998;
   font: caption;
   text-align: center;
   padding-bottom: 2em;
@@ -19,7 +20,7 @@ header {
 header .logo {
   display: block;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 300px;
   width: 100%;
 }
 
