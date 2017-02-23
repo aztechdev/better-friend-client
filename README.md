@@ -26,7 +26,7 @@ API with Node.js.
 ## Screenshot
 Landing page
 
-<img src="https://raw.githubusercontent.com/ajr-zimmer/better-friend-client/master/screenshots/landing-page.jng" width="400">
+<img src="https://raw.githubusercontent.com/ajr-zimmer/better-friend-client/master/screenshots/landing-page.jpg" width="400">
 
 Sandra automatically replying to Ullrich's Facebook wall posts.
 
